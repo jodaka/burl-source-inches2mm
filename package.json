@@ -5,5 +5,5 @@
   "description": "This thing would automatically convert wood blocks dimensions from inches to millimeters on the http://burlsource.us site",
   "author": "Anton Kudris",
   "license": "MPL 2.0",
-  "version": "2.0"
+  "version": "2.1"
 }
