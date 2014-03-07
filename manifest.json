@@ -3,7 +3,7 @@
 
   "name": "Burl Source Inches To Millimeters",
   "description": "This extension would convert inches into millimeters automagically on the http://burlsource.us",
-  "version": "2.0",
+  "version": "2.1",
   "permissions": [
     "http://www.burlsource.us/*"
   ],
