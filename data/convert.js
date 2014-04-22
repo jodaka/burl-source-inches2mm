@@ -14,10 +14,26 @@ function inchesToMm( dimensionsString ) {
         if ( /\d+(?:&amp;\d+\/\d+)?"/.test(dimens[i])) {
 
             var parts = dimens[i].replace(/\D+/g, 'x').split(/\D/);
+                parts.pop(); // we don't need last element
 
-            var inchValue = ( parts.length == 2 )
-                ? parseInt(parts[0], 10)
-                : ( parseInt(parts[0], 10) + (parseInt(parts[1], 10) / parseInt(parts[2], 10) ) );
+            var inchValue;
+
+            switch (parts.length) {
+                case 1:
+
+                    inchValue = parseInt(parts[0], 10);
+                    break;
+
+                case 2:
+
+                    inchValue = parseInt(parts[0], 10) / parseInt(parts[1], 10);
+                    break;
+
+                default:
+
+                    inchValue = ( parseInt(parts[0], 10) + (parseInt(parts[1], 10) / parseInt(parts[2], 10) ) )
+                    break;
+            }
 
             inchValue = Math.floor( inchValue / inc2mm );
             dimensionsString = dimensionsString.replace( dimens[i], inchValue );
