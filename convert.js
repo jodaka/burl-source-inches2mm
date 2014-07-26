@@ -118,7 +118,7 @@
 
         var holder = document.createElement( 'div' );
         holder.setAttribute( 'id', 'burlsource_unitsTrigger' );
-        holder.setAttribute( 'style', 'text-align:right');
+        holder.setAttribute( 'style', 'text-align:right' );
 
         holder.innerHTML = 'Units: \
         <input type="radio" style="margin-left: 15px" name="burlsource_units" id="burlsource_units_inches" value="inches" /><label style="display: inline" for="burlsource_units_inches">inches</label>\
@@ -263,7 +263,7 @@
         if ( productDetails !== null ) {
 
             if ( cache.hasData( listing ) ) {
-                cache.convert( listing, selectedUnit.get());
+                cache.convert( listing, selectedUnit.get() );
             } else {
 
                 var node = document.querySelector( '.ProductDescriptionContainer' ).firstElementChild;
@@ -288,16 +288,16 @@
         }
 
         // products comparison
-        var compareContent = document.querySelector('table.ComparisonTable');
+        var compareContent = document.querySelector( 'table.ComparisonTable' );
         if ( compareContent !== null ) {
             var nodes = compareContent.querySelectorAll( 'tr:nth-child(7) .CompareLeft' );
 
             for ( i = 0; i < nodes.length; i++ ) {
 
-                if ( nodes[i].nodeType === 1 ) {
-                    result = findInchesInString( nodes[i].firstChild.data );
+                if ( nodes[ i ].nodeType === 1 ) {
+                    result = findInchesInString( nodes[ i ].firstChild.data );
                     if ( result !== '' && !/NaN/.test( result ) ) {
-                        nodes[i].firstChild.data = result;
+                        nodes[ i ].firstChild.data = result;
                     }
                 }
             }
